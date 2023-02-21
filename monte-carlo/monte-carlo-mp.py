@@ -50,6 +50,8 @@ def endless_get_pi(rate, processes):
         curr_str[idx] = '\x1B[42m'+curr_str[idx]+'\x1B[0m'
       elif prev_str[idx] == curr_str[idx]:
         curr_str[idx] = '\x1B[32m'+curr_str[idx]+'\x1B[0m'
+      else:
+        break
 
     print('[ monte-carlo.py | iter:', iteration, 'x', rate, '| pi:', ''.join(curr_str), ']', end='\r')
 
