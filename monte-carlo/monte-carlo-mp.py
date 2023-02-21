@@ -1,4 +1,4 @@
-# Monte Carlo approach to Pi, using multiprocessing Pool for concurrent get_pi() calls
+# Monte Carlo approach to Pi, using multiprocessing for concurrent get_pi() calls
 
 from multiprocessing import Process, Queue, cpu_count
 import random
