@@ -5,9 +5,7 @@ def get_pi(try_times):
   for _ in range(try_times):
     pi += 1/d
     d += 2
-    d *= -1
-    pi += 1/d
-    d *= -1
+    pi -= 1/d
     d += 2
   return 4*pi
 
@@ -21,9 +19,7 @@ def endless_get_pi(rate):
   while True:
     pi += 1/d
     d += 2
-    d *= -1
-    pi += 1/d
-    d *= -1
+    pi -= 1/d
     d += 2
     showtext += 1
     if showtext == rate:
@@ -35,9 +31,9 @@ def endless_get_pi(rate):
           pi_text[idx] = '\x1B[42m'+pi_text[idx]+'\x1B[0m'
         else:
           break
-      if shown == 100:
+      if shown == 64:
         shown = 0
         pi_text_old = get_fixed_charlist(4*pi)
-      print('[ leibniz.py | current: 1 /', d,'| pi:', ''.join(pi_text), ']', end='\r')
+      print('[ leibniz.py | denominator:', len(str(d)),'digits | pi:', ''.join(pi_text), ']', end='\r')
 
-endless_get_pi(32768)
+endless_get_pi(262144)
